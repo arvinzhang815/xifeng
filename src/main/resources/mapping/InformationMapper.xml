@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xifeng.kuandai.mapper.InformationMapper" >
+  <resultMap id="BaseResultMap" type="com.xifeng.kuandai.dto.Information" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="telphone" property="telphone" jdbcType="VARCHAR" />
+    <result column="kuandaiNo" property="kuandaino" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="KDAddr" property="kdaddr" jdbcType="VARCHAR" />
+    <result column="begainDate" property="begaindate" jdbcType="VARCHAR" />
+    <result column="endDate" property="enddate" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, telphone, kuandaiNo, address, KDAddr, begainDate, endDate, remark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from Information
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from Information
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xifeng.kuandai.dto.Information" >
+    insert into Information (id, name, telphone, 
+      kuandaiNo, address, KDAddr, 
+      begainDate, endDate, remark
+      )
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{telphone,jdbcType=VARCHAR}, 
+      #{kuandaino,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{kdaddr,jdbcType=VARCHAR}, 
+      #{begaindate,jdbcType=VARCHAR}, #{enddate,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xifeng.kuandai.dto.Information" >
+    insert into Information
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="telphone != null" >
+        telphone,
+      </if>
+      <if test="kuandaino != null" >
+        kuandaiNo,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="kdaddr != null" >
+        KDAddr,
+      </if>
+      <if test="begaindate != null" >
+        begainDate,
+      </if>
+      <if test="enddate != null" >
+        endDate,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="telphone != null" >
+        #{telphone,jdbcType=VARCHAR},
+      </if>
+      <if test="kuandaino != null" >
+        #{kuandaino,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="kdaddr != null" >
+        #{kdaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="begaindate != null" >
+        #{begaindate,jdbcType=VARCHAR},
+      </if>
+      <if test="enddate != null" >
+        #{enddate,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xifeng.kuandai.dto.Information" >
+    update Information
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="telphone != null" >
+        telphone = #{telphone,jdbcType=VARCHAR},
+      </if>
+      <if test="kuandaino != null" >
+        kuandaiNo = #{kuandaino,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="kdaddr != null" >
+        KDAddr = #{kdaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="begaindate != null" >
+        begainDate = #{begaindate,jdbcType=VARCHAR},
+      </if>
+      <if test="enddate != null" >
+        endDate = #{enddate,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xifeng.kuandai.dto.Information" >
+    update Information
+    set name = #{name,jdbcType=VARCHAR},
+      telphone = #{telphone,jdbcType=VARCHAR},
+      kuandaiNo = #{kuandaino,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      KDAddr = #{kdaddr,jdbcType=VARCHAR},
+      begainDate = #{begaindate,jdbcType=VARCHAR},
+      endDate = #{enddate,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

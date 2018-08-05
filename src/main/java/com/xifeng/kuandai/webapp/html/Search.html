@@ -1,0 +1,66 @@
+
+<div class="pageContent">
+    <form method="post" action="/getbyname" onsubmit="return navTabSearch(this);">
+        <div class="pageFormContent" layoutH="56">
+            <p>
+                <label>姓名：</label>
+                <input type="text" class="textInput"
+                       id="query_fundTypeCode" name="fundTypeCode" />
+            </p>
+            <p>
+                <label>手机号：</label>
+                <input type="text" class="textInput"
+                       id="query_fundTypeName" name="fundTypeName" />
+            </p>
+            <p>
+                <label>宽带账号：</label>
+                <input type="text" class="textInput"
+                       id="query_fundTypeOwnership" name="fundTypeOwnership" />
+            </p>
+        </div>
+        <div class="formBar">
+            <ul>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="reset">重置</button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">取消</button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="submit" class="submit">搜索</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript" src="/js/common/common2.js"></script>
+<script>
+    var data = $.pdialog.getDialogOpenData().data;
+    data = JSON.parse(data);
+    reload(data);
+    // 提交
+    $(".submit").click(function() {
+        var data = $(this).parents('form').serialize();
+        $(this).parents('form').submit();
+        $.pdialog.closeCurrent(data);
+    });
+    // 重置
+    //--------------------------【RESET】按钮（不需要RELOAD）--------------------------
+    $('.reset').unbind('click');
+    $('.reset').click(function() {
+        refresh($(this));
+    });
+</script>

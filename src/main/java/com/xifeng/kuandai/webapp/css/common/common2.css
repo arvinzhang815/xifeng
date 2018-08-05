@@ -1,0 +1,534 @@
+.pageContent {
+  position: relative;
+}
+#header .logoname {
+  line-height: 50px;
+  color: #fff;
+  font-size: 26px;
+  font-family: simsun;
+  padding-left: 12px;
+}
+/*table样式*/
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 0;
+  border-collapse: collapse;
+}
+th {
+  text-align: center;
+  border: 1px solid #ccc;
+  vertical-align: top;
+  white-space: nowrap;
+  line-height: 24px;
+  font-weight: bold;
+  padding: 0 12px;
+  overflow: hidden;
+  height: 26px;
+}
+td {
+  text-align: center;
+  white-space: nowrap;
+  border-right: solid 1px #ededed;
+  border-bottom: solid 1px #ededed;
+  vertical-align: middle;
+  line-height: 24px;
+  padding: 0 12px;
+  max-width: 150px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.handle {
+  padding: 6px 12px;
+}
+.btn {
+  border: 1px solid #ccc;
+  padding: 3px 6px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e6e6e6));
+  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+  border-radius: 2px;
+  cursor: pointer;
+}
+.add {
+  background: #0f88eb;
+  background: -webkit-gradient(linear, left top, left bottom, from(#3eaafb), to(#008af1));
+  background: linear-gradient(to bottom, #3eaafb, #008af1);
+  color: #fff;
+}
+.delete {
+  background: #dd524d;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f17a76), to(#dd524d));
+  background-image: linear-gradient(to bottom, #f17a76, #dd524d);
+  color: #fff;
+}
+a:hover {
+  text-decoration: none;
+}
+/*修改复核等操作面板*/
+.handel h1 {
+  padding-left: 20px;
+  -webkit-box-shadow: 0px 2px 3px #ccc;
+  box-shadow: 0px 2px 3px #ccc;
+  line-height: 32px;
+  font-size: 18px;
+  position: relative;
+}
+.handel ul {
+  padding: 20px;
+  overflow: hidden;
+}
+.handel li {
+  width: 380px;
+  float: left;
+  margin-bottom: 20px;
+}
+.handel li span {
+  display: inline-block;
+  width: 130px;
+}
+.handel li input[type="text"],
+.handel li select {
+  width: 172px;
+}
+.handel li.check {
+  overflow: hidden;
+}
+.handel li.check span {
+  float: left;
+}
+.handel .checkbox {
+  overflow: hidden;
+  float: left;
+  width: 172px;
+}
+.handel .checkbox p {
+  float: left;
+  width: 86px;
+  overflow: hidden;
+}
+.handel .btnGroup {
+  width: 100%;
+  padding: 4px 20px;
+  position: absolute;
+  overflow: hidden;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid #EDEDED;
+  background: #fafafa;
+}
+.handel .btnGroup .submit {
+  float: right;
+  margin-right: 6%;
+}
+/*详情预览面板*/
+.preview {
+  height: 100%;
+}
+.preview ul {
+  height: 100%;
+  overflow: auto;
+}
+.preview ul li {
+  overflow: hidden;
+  border-bottom: 1px solid #EDEDED;
+  padding: 6px 0;
+}
+.preview ul li:hover {
+  background: #ECFAFF;
+}
+.preview ul {
+  border: 1px solid #EDEDED;
+  border-bottom: 0;
+}
+.preview ul li span {
+  float: left;
+  width: 140px;
+  text-align: left;
+  padding: 0 12px;
+  font-weight: bold;
+  color: #333;
+  line-height: 20px;
+}
+.preview ul li p {
+  float: left;
+  color: #555;
+  line-height: 20px;
+  padding-right: 20px;
+}
+.preview .tip {
+  padding-left: 20px;
+}
+.content {
+  position: relative;
+}
+.content .pageinfo {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.pageinfo span {
+  padding: 0 10px;
+}
+.pageinfo input[type="text"] {
+  width: 60px;
+}
+.pageinfo form {
+  float: left;
+  margin-left: 30%;
+}
+form .time {
+  width: 600px;
+}
+form .time span {
+  float: left;
+  line-height: 21px;
+  padding: 0 15px;
+}
+form .time input {
+  display: inline-block;
+}
+form select {
+  width: 132px;
+  line-height: 20px;
+}
+select.required {
+  background: url(../themes/default/images/form/_bg.png) no-repeat 106px;
+}
+input.readonly,
+select.disabled,
+input[readonly="readonly"],
+input[disabled="disabled"],
+input[disabled],
+input[readonly],
+select[disabled="disabled"] {
+  background: #EDEDED;
+}
+.optional h3 {
+  padding-left: 4px;
+}
+.condition {
+  background: #EBF0F5;
+  padding: 4px;
+}
+.condition form p {
+  float: left;
+  width: 380px;
+  margin-bottom: 12px;
+}
+.condition form p label {
+  float: left;
+  width: 130px;
+}
+.condition form > div {
+  overflow: hidden;
+}
+.condition .bar {
+  overflow: hidden;
+}
+.condition .bar button {
+  float: right;
+  margin-right: 30px;
+}
+/*分页按钮*/
+.pageinfo span {
+  color: #333;
+}
+.pageinfo button {
+  background: transparent;
+  border: 0;
+  outline: medium;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+/*.pageinfo button:hover {
+  border: 1px solid #c2d7dc;
+  background: -webkit-gradient(linear, left top, left bottom, from(top), color-stop(#eaf0f2), color-stop(#f5f9fa), to(#eaf0f2));
+  background: linear-gradient(top, #eaf0f2, #f5f9fa, #eaf0f2);
+}*/
+.check {
+  width: 600px;
+}
+.modal-box {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.4);
+  display: none;
+}
+.modal {
+  position: absolute;
+  z-index: 9999;
+  width: 860px;
+  border: 1px solid #bfd2d5;
+  left: 50%;
+  margin-left: -430px;
+  top: 100px;
+  background: #ecf4f6;
+  border-radius: 4px;
+}
+.modal .modal-head {
+  height: 28px;
+  background: #f0f4f7;
+  border-bottom: 1px solid #bfd2d5;
+  border-radius: 4px 4px 0 0 ;
+  overflow: hidden;
+}
+.modal .modal-head span {
+  font-size: 16px;
+  line-height: 28px;
+  float: left;
+  padding: 0 5px;
+}
+.modal .modal-head a {
+  float: right;
+  line-height: 28px;
+  padding: 0 10px;
+}
+.modal .modal-head a:hover {
+  color: #666;
+}
+.modal .modal-head:hover {
+  cursor: move;
+}
+.modal .modal-body {
+  width: 850px;
+  height: 300px;
+  margin: 5px;
+  border: 1px solid #bfd2d5;
+  background: #fff;
+  overflow: auto;
+}
+.modal .modal-foot {
+  height: 32px;
+  margin-bottom: 5px;
+  border-top: 1px solid #bfd2d5;
+  padding: 4px;
+  overflow: hidden;
+}
+.modal .modal-foot button {
+  float: right;
+  line-height: 26px;
+  padding: 0 6px;
+  border: 1px solid #bfd2d5;
+  cursor: pointer;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f6fcfa), to(#deedf0));
+  background-image: linear-gradient(to bottom, #f6fcfa, #deedf0);
+  border-radius: 2px;
+  margin-right: 10px;
+  margin-top: 3px;
+  color: #183054;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+.modal .modal-foot button:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#f6fcfa));
+  background-image: linear-gradient(to bottom, #fafafa, #f6fcfa);
+}
+.limit > div {
+  float: left;
+  height: 100%;
+}
+.limit .left {
+  height: 100%;
+  border-right: 1px solid #EDF8FF;
+}
+.limit .right li a {
+  display: block;
+  padding: 0 12px;
+  padding-left: 10px;
+  line-height: 30px;
+  background: #e8edf3;
+}
+.limit .right li ul li {
+  line-height: 22px;
+  padding-left: 26px;
+  color: #333;
+  position: relative;
+}
+.limit .right li ul li:hover {
+  background: #f5f5f5;
+}
+.limit .right li ul li span {
+  display: block;
+  position: absolute;
+  left: 15px;
+  top: 0;
+  height: 22px;
+  width: 10px;
+  border-left: 1px dashed #B1D2EC;
+}
+.limit .right li ul li span i {
+  display: block;
+  width: 10px;
+  border-top: 1px dashed #B1D2EC;
+  margin-top: 10px;
+}
+.limit .right li ul li:last-of-type span {
+  height: 11px;
+}
+.limit .right li ul li label {
+  display: inline-block;
+  float: inherit;
+}
+input.date {
+  width: 132px;
+}
+/*搜索栏*/
+.pageHeader .searchBar {
+    overflow: hidden;
+}
+
+.pageHeader p {
+    width: 380px;
+    float: left;
+}
+
+.pageHeader p label {
+    display: inline-block;
+    width: 130px;
+}
+
+.pageHeader p {
+    float: left;
+    display: block;
+    width: 280px;
+    height: 21px;
+    margin: 0;
+    padding: 5px 0;
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.pageHeader p.nowrap {
+    height: auto;
+    width: 100%
+}
+
+.pageHeader .radioGroup {
+    float: left;
+    display: block;
+    overflow: hidden;
+}
+
+.pageHeader label {
+    float: left;
+    width: 120px;
+    padding: 0 5px;
+    line-height: 21px;
+}
+
+.pageHeader label.radioButton {
+    float: left;
+    width: auto;
+    padding: 0 10px 0 0;
+    line-height: 21px;
+}
+
+.pageHeader input {
+    float: left;
+}
+
+.pageHeader select {
+    float: left;
+}
+/*//搜索栏*/
+.pageHeader .searchBar {
+    overflow: hidden;
+}
+
+.pageHeader p {
+    width: 380px;
+    float: left;
+}
+
+.pageHeader p label {
+    display: inline-block;
+    width: 130px;
+}
+
+.pageHeader p {
+    float: left;
+    display: block;
+    width: 280px;
+    height: 21px;
+    margin: 0;
+    padding: 5px 0;
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.pageHeader p.nowrap {
+    height: auto;
+    width: 100%
+}
+
+.pageHeader .radioGroup {
+    float: left;
+    display: block;
+    overflow: hidden;
+}
+
+.pageHeader label {
+    float: left;
+    width: 120px;
+    padding: 0 5px;
+    line-height: 21px;
+}
+
+.pageHeader label.radioButton {
+    float: left;
+    width: auto;
+    padding: 0 10px 0 0;
+    line-height: 21px;
+}
+
+.pageHeader input {
+    float: left;
+}
+
+.pageHeader select {
+    float: left;
+}
+/*cron*/
+.cron-nav {
+  width: 100%;
+  overflow: hidden;
+  height: 30px;
+  background: #ebf0f5;
+  border-bottom: 1px solid #b8d0d6;
+}
+.cron-nav li {
+  float: left;
+  font-size: 12px;
+  line-height: 30px;
+  padding: 0 20px;
+  cursor: pointer;
+}
+.cron-nav li:nth-of-type(1) {
+  background: #fff;
+}
+.cron-container .item {
+  display: none;
+  padding: 10px;
+}
+.cron-container .item:nth-of-type(1) {
+  display: block;
+}
+.cron-container .item div {
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.cron-container .item div input {
+  float: left;
+  width: 60px;
+}
+.cron-container .item div span {
+  float: left;
+  line-height: 20px;
+  padding: 0 5px;
+}
