@@ -5,16 +5,49 @@
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="telphone" property="telphone" jdbcType="VARCHAR" />
-    <result column="kuandaiNo" property="kuandaino" jdbcType="VARCHAR" />
+    <result column="kuandaiNo" property="kuandaiNo" jdbcType="VARCHAR" />
     <result column="address" property="address" jdbcType="VARCHAR" />
-    <result column="KDAddr" property="kdaddr" jdbcType="VARCHAR" />
-    <result column="begainDate" property="begaindate" jdbcType="VARCHAR" />
-    <result column="endDate" property="enddate" jdbcType="VARCHAR" />
+    <result column="KDAddr" property="KDAddr" jdbcType="VARCHAR" />
+    <result column="begainDate" property="begainDate" jdbcType="VARCHAR" />
+    <result column="endDate" property="endDate" jdbcType="VARCHAR" />
     <result column="remark" property="remark" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, name, telphone, kuandaiNo, address, KDAddr, begainDate, endDate, remark
   </sql>
+  <sql id="sqlwhere">
+    <where>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR}
+      </if>
+      <if test="telphone != null" >
+        and telphone = #{telphone,jdbcType=VARCHAR}
+      </if>
+      <if test="kuandaiNo != null" >
+        and kuandaiNo = #{kuandaiNo,jdbcType=VARCHAR}
+      </if>
+      <if test="address != null" >
+        and address = #{address,jdbcType=VARCHAR}
+      </if>
+      <if test="KDAddr != null" >
+        and KDAddr = #{KDAddr,jdbcType=VARCHAR}
+      </if>
+      <if test="begainDate != null" >
+        and begainDate = #{begainDate,jdbcType=VARCHAR}
+      </if>
+      <if test="endDate != null" >
+        and endDate = #{endDate,jdbcType=VARCHAR}
+      </if>
+      <if test="remark != null" >
+        and remark = #{remark,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="queryInformation" parameterType="com.xifeng.kuandai.dto.Information" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List" />
+    from Information
+    <include refid="sqlwhere"/>
+  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
@@ -31,8 +64,8 @@
       begainDate, endDate, remark
       )
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{telphone,jdbcType=VARCHAR}, 
-      #{kuandaino,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{kdaddr,jdbcType=VARCHAR}, 
-      #{begaindate,jdbcType=VARCHAR}, #{enddate,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}
+      #{kuandaiNo,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{KDAddr,jdbcType=VARCHAR},
+      #{begainDate,jdbcType=VARCHAR}, #{endDate,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.xifeng.kuandai.dto.Information" >
@@ -47,19 +80,19 @@
       <if test="telphone != null" >
         telphone,
       </if>
-      <if test="kuandaino != null" >
+      <if test="kuandaiNo != null" >
         kuandaiNo,
       </if>
       <if test="address != null" >
         address,
       </if>
-      <if test="kdaddr != null" >
+      <if test="KDAddr != null" >
         KDAddr,
       </if>
-      <if test="begaindate != null" >
+      <if test="begainDate != null" >
         begainDate,
       </if>
-      <if test="enddate != null" >
+      <if test="endDate != null" >
         endDate,
       </if>
       <if test="remark != null" >
@@ -76,20 +109,20 @@
       <if test="telphone != null" >
         #{telphone,jdbcType=VARCHAR},
       </if>
-      <if test="kuandaino != null" >
-        #{kuandaino,jdbcType=VARCHAR},
+      <if test="kuandaiNo != null" >
+        #{kuandaiNo,jdbcType=VARCHAR},
       </if>
       <if test="address != null" >
         #{address,jdbcType=VARCHAR},
       </if>
-      <if test="kdaddr != null" >
-        #{kdaddr,jdbcType=VARCHAR},
+      <if test="KDAddr != null" >
+        #{KDAddr,jdbcType=VARCHAR},
       </if>
-      <if test="begaindate != null" >
-        #{begaindate,jdbcType=VARCHAR},
+      <if test="begainDate != null" >
+        #{begainDate,jdbcType=VARCHAR},
       </if>
-      <if test="enddate != null" >
-        #{enddate,jdbcType=VARCHAR},
+      <if test="endDate != null" >
+        #{endDate,jdbcType=VARCHAR},
       </if>
       <if test="remark != null" >
         #{remark,jdbcType=VARCHAR},
@@ -105,20 +138,20 @@
       <if test="telphone != null" >
         telphone = #{telphone,jdbcType=VARCHAR},
       </if>
-      <if test="kuandaino != null" >
-        kuandaiNo = #{kuandaino,jdbcType=VARCHAR},
+      <if test="kuandaiNo != null" >
+        kuandaiNo = #{kuandaiNo,jdbcType=VARCHAR},
       </if>
       <if test="address != null" >
         address = #{address,jdbcType=VARCHAR},
       </if>
-      <if test="kdaddr != null" >
-        KDAddr = #{kdaddr,jdbcType=VARCHAR},
+      <if test="KDAddr != null" >
+        KDAddr = #{KDAddr,jdbcType=VARCHAR},
       </if>
-      <if test="begaindate != null" >
-        begainDate = #{begaindate,jdbcType=VARCHAR},
+      <if test="begainDate != null" >
+        begainDate = #{begainDate,jdbcType=VARCHAR},
       </if>
-      <if test="enddate != null" >
-        endDate = #{enddate,jdbcType=VARCHAR},
+      <if test="endDate != null" >
+        endDate = #{endDate,jdbcType=VARCHAR},
       </if>
       <if test="remark != null" >
         remark = #{remark,jdbcType=VARCHAR},
@@ -130,11 +163,11 @@
     update Information
     set name = #{name,jdbcType=VARCHAR},
       telphone = #{telphone,jdbcType=VARCHAR},
-      kuandaiNo = #{kuandaino,jdbcType=VARCHAR},
+      kuandaiNo = #{kuandaiNo,jdbcType=VARCHAR},
       address = #{address,jdbcType=VARCHAR},
-      KDAddr = #{kdaddr,jdbcType=VARCHAR},
-      begainDate = #{begaindate,jdbcType=VARCHAR},
-      endDate = #{enddate,jdbcType=VARCHAR},
+      KDAddr = #{KDAddr,jdbcType=VARCHAR},
+      begainDate = #{begainDate,jdbcType=VARCHAR},
+      endDate = #{endDate,jdbcType=VARCHAR},
       remark = #{remark,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>

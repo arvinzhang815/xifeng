@@ -1,5 +1,5 @@
 server:
-  port: 80
+  port: 8888
 
 spring:
   mvc:
@@ -11,16 +11,15 @@ spring:
     url: jdbc:mysql://39.108.128.195:3306/arvinzhang
     username: root
     password: arvinzhang
-    # Ê¹ÓÃdruidÊı¾İÔ´
+    # Druidæ•°æ®åº“è¿æ¥
 #    type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
 
-## ¸ÃÅäÖÃ½ÚµãÎª¶ÀÁ¢µÄ½Úµã£¬ÓĞºÜ¶àÍ¬Ñ§ÈİÒ×½«Õâ¸öÅäÖÃ·ÅÔÚspringµÄ½ÚµãÏÂ£¬µ¼ÖÂÅäÖÃÎŞ·¨±»Ê¶±ğ
+## mybatisé…ç½®
 mybatis:
-  mapper-locations: classpath:mapping/*.xml  #×¢Òâ£ºÒ»¶¨Òª¶ÔÓ¦mapperÓ³ÉäxmlÎÄ¼şµÄËùÔÚÂ·¾¶
-  type-aliases-package: com.xifeng.kuandai.dto # ×¢Òâ£º¶ÔÓ¦ÊµÌåÀàµÄÂ·¾¶
-
-#pagehelper·ÖÒ³²å¼ş
+  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: com.xifeng.kuandai.dto
+#pagehelperåˆ†é¡µ
 #pagehelper:
 #  helperDialect: mysql
 #  reasonable: true

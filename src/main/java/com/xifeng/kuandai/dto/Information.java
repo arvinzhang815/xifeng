@@ -7,15 +7,15 @@ public class Information {
 
     private String telphone;
 
-    private String kuandaino;
+    private String kuandaiNo;
 
     private String address;
 
-    private String kdaddr;
+    private String KDAddr;
 
-    private String begaindate;
+    private String begainDate;
 
-    private String enddate;
+    private String endDate;
 
     private String remark;
 
@@ -32,7 +32,7 @@ public class Information {
     }
 
     public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+        this.name = name;
     }
 
     public String getTelphone() {
@@ -40,15 +40,15 @@ public class Information {
     }
 
     public void setTelphone(String telphone) {
-        this.telphone = telphone == null ? null : telphone.trim();
+        this.telphone = telphone;
     }
 
-    public String getKuandaino() {
-        return kuandaino;
+    public String getKuandaiNo() {
+        return kuandaiNo;
     }
 
-    public void setKuandaino(String kuandaino) {
-        this.kuandaino = kuandaino == null ? null : kuandaino.trim();
+    public void setKuandaiNo(String kuandaiNo) {
+        this.kuandaiNo = kuandaiNo;
     }
 
     public String getAddress() {
@@ -56,31 +56,31 @@ public class Information {
     }
 
     public void setAddress(String address) {
-        this.address = address == null ? null : address.trim();
+        this.address = address;
     }
 
-    public String getKdaddr() {
-        return kdaddr;
+    public String getKDAddr() {
+        return KDAddr;
     }
 
-    public void setKdaddr(String kdaddr) {
-        this.kdaddr = kdaddr == null ? null : kdaddr.trim();
+    public void setKDAddr(String KDAddr) {
+        this.KDAddr = KDAddr;
     }
 
-    public String getBegaindate() {
-        return begaindate;
+    public String getBegainDate() {
+        return begainDate;
     }
 
-    public void setBegaindate(String begaindate) {
-        this.begaindate = begaindate == null ? null : begaindate.trim();
+    public void setBegainDate(String begainDate) {
+        this.begainDate = begainDate;
     }
 
-    public String getEnddate() {
-        return enddate;
+    public String getEndDate() {
+        return endDate;
     }
 
-    public void setEnddate(String enddate) {
-        this.enddate = enddate == null ? null : enddate.trim();
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
     }
 
     public String getRemark() {
@@ -88,6 +88,6 @@ public class Information {
     }
 
     public void setRemark(String remark) {
-        this.remark = remark == null ? null : remark.trim();
+        this.remark = remark;
     }
 }

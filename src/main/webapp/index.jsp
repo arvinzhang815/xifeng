@@ -7,14 +7,14 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>登录</title>
+    <title>宽带账户查询-登录</title>
     <link rel="stylesheet" type="text/css" href="css/login/login.css" />
     <script type="text/javascript" src="/js/libs/jquery-2.1.4.min.js"></script>
 </head>
 <body>
 <div class="container" >
     <div class="login">
-        <h1 class="title">管理员登录</h1>
+        <h1 class="title">账号登录</h1>
         <form action="/j_spring_security_check" method="post">
             <ul>
                 <li>
@@ -26,7 +26,7 @@
                     <input type="password" name="j_password" value="" placeholder="请输入密码" id="j_password"/>
                 </li>
             </ul>
-            <button type="button" class="submit" id="loginSubmit">登录</button>
+            <button type="submit" class="submit" id="loginSubmit">登录</button>
         </form>
     </div>
     <!--footer start-->
@@ -35,28 +35,6 @@
     </div>
     <!--footer end-->
 </div>
-<script>
-    $(function(){
-        $("#loginSubmit").click(function(){
-            $.ajax({
-                type : "post",
-                url : "/queryByInfo",
-                dataType : "JSON",
-                data : form.serialize(),
-                success : function(data) {
-
-                }
-            });
-        });
-        function required (id) {
-            var node = $('#'+id+'');
-            var value = node.val().trim();
-            if(value == ""){
-                alert("必填项目不能为空！");
-                return false;
-            }
-        }
-    });
-</script>
+<script src="js/login/login.js"/>
 </body>
 </html>

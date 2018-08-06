@@ -2,6 +2,7 @@ package com.xifeng.kuandai.controller;
 
 import com.xifeng.kuandai.dto.Information;
 import com.xifeng.kuandai.service.KuandaiService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,11 +20,15 @@ import java.util.List;
  * @date 2018/7/5
  **/
 @Controller
-@RequestMapping("/kuandai")
 public class KuandaiController {
 
     @Autowired
     private KuandaiService kuandaiService;
+
+    @RequestMapping("/test2")
+    public String test2(){
+        return "index";
+    }
 
     @ResponseBody
     @RequestMapping(value = "/add", produces = {"application/json;charset=UTF-8"})
@@ -38,17 +43,49 @@ public class KuandaiController {
     }
 
     @RequestMapping(value="/queryByInfo")
-    public String getByName(@RequestBody Information infomation,
+    public String getByName(@RequestParam(value = "name",required = false) String name,
+                            @RequestParam(value = "telphone",required = false) String telphone,
+                            @RequestParam(value = "kuandaiNo",required = false) String kuandaiNo,
+                            @RequestParam(value = "address",required = false) String address,
+                            @RequestParam(value = "KDAddr",required = false) String KDAddr,
+                            @RequestParam(value = "begainDate",required = false) String begainDate,
+                            @RequestParam(value = "endDate",required = false) String endDate,
+                            @RequestParam(value = "remark",required = false) String remark,
                             Model model){
         List<Information> list = new ArrayList<Information>();
+        Information information = new Information();
+        if(StringUtils.isNoneBlank(name)){
+            information.setName(name);
+        }
+        if(StringUtils.isNotBlank(telphone)){
+            information.setTelphone(telphone);
+        }
+        if(StringUtils.isNotBlank(kuandaiNo)){
+            information.setKuandaiNo(kuandaiNo);
+        }
+        if(StringUtils.isNotBlank(address)){
+            information.setAddress(address);
+        }
+        if(StringUtils.isNotBlank(KDAddr)){
+            information.setKDAddr(KDAddr);
+        }
+        if(StringUtils.isNotBlank(begainDate)){
+            information.setBegainDate(begainDate);
+        }
+        if(StringUtils.isNotBlank(endDate)){
+            information.setEndDate(endDate);
+        }
+        if(StringUtils.isNotBlank(remark)){
+            information.setRemark(remark);
+        }
         try {
-            list = kuandaiService.queryByInfo(infomation);
+            list = kuandaiService.queryByInfo(information);
         }catch (Exception e){
             e.printStackTrace();
         }
         // 分页信息
         model.addAttribute("response", list);
-        return "index";
+        return "/pages/home";
     }
     @RequestMapping(value="/home/page")
     public ModelAndView goHome(){
@@ -81,9 +118,9 @@ public class KuandaiController {
         infor.setName(name);
         infor.setTelphone(telphone);
         infor.setAddress(address);
-        infor.setKdaddr(KDAddr);
-        infor.setBegaindate(begainDate);
-        infor.setEnddate(endDate);
+        infor.setKDAddr(KDAddr);
+        infor.setBegainDate(begainDate);
+        infor.setEndDate(endDate);
         infor.setRemark(remark);
         try {
             kuandaiService.insert(infor);
@@ -107,9 +144,9 @@ public class KuandaiController {
         infor.setName(name);
         infor.setTelphone(telphone);
         infor.setAddress(address);
-        infor.setKdaddr(KDAddr);
-        infor.setBegaindate(begainDate);
-        infor.setEnddate(endDate);
+        infor.setKDAddr(KDAddr);
+        infor.setBegainDate(begainDate);
+        infor.setEndDate(endDate);
         infor.setRemark(remark);
         try {
             kuandaiService.update(infor);
