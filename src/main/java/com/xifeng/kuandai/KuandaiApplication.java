@@ -16,6 +16,6 @@ public class KuandaiApplication extends SpringBootServletInitializer {
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder applicationBuilder){
-        return applicationBuilder.sources(SpringBootApplication.class);
+        return applicationBuilder.sources(KuandaiApplication.class);
     }
 }
